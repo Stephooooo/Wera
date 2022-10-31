@@ -2,7 +2,8 @@ import React from 'react'
 import Inputs from '../common/inputs'
 import { Link} from "react-router-dom";
 
-function Signup() {
+
+function SignUpJobSeeker() {
   return (
     <div>
     <div className='md:columns-1 lg:columns-2 '>
@@ -15,13 +16,13 @@ function Signup() {
 
     <div className='inline-flex space-x-12 mb-5'> 
 
-
+    
     <Link className='bg-transparent border-x-2 border-y-2 border-black rounded-md px-2 py-1' to="/SignUpJobSeeker" > Job Seeker </Link>
-    <Link className='bg-transparent border-x-2 border-y-2 border-black rounded-md px-2 py-1' to= "/SignUp" > Employer </Link>
+    <Link className='bg-transparent border-x-2 border-y-2 border-black rounded-md px-2 py-1' to="/SignUp" > Employer </Link>
     </div>
 
     <Inputs 
-    label= "Company Name"
+    label= "Full Name"
     required= {true}
     />
 
@@ -42,8 +43,8 @@ function Signup() {
     type= "password"
     required= {true}
     />
-<div className='mt-10'>
-
+    
+    <div className='mt-10'>
 <Link className='bg-black px-[135px] py-2 rounded-md text-white hover:outline-white mt-10 ' to="/" > Sign in </Link>
 </div>
     </div>
@@ -52,4 +53,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default SignUpJobSeeker

@@ -1,6 +1,7 @@
 import React, { Children, useState } from "react";
 import { Transition } from "@headlessui/react";
 import Buttons from "./buttons";
+import { Link} from "react-router-dom";
 
 
 function Navbar( {isSignedIn, isNotSignedIn}) {
@@ -19,13 +20,13 @@ function Navbar( {isSignedIn, isNotSignedIn}) {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               
-              <a href="#" className=" text-black px-3 py-2 rounded-md text-[20px] hover:font-bold " >Home</a>
+              <Link href="#" className=" text-black px-3 py-2 rounded-md text-[15px] hover:font-bold" to= "/" >Home</Link>
 
-              <a href="#" className=" text-black px-3 py-2 rounded-md text-[20px] hover:font-bold " >Find jobs</a>
+              <Link href="#" className=" text-black px-3 py-2 rounded-md text-[15px] hover:font-bold " to= "/FindJobs">Find jobs</Link>
 
-              <a href="#" className="text-black px-3 py-2 rounded-md text-[20px] hover:font-bold"> About us</a>
+              <Link href="#" className="text-black px-3 py-2 rounded-md text-[15px] hover:font-bold" to="/AboutUs" > About us</Link>
 
-              <a href="#" className="text-black px-3 py-2 rounded-md text-[20px] hover:font-bold">Employer</a>
+              <Link href="#" className="text-black px-3 py-2 rounded-md text-[15px] hover:font-bold" to="/Employer" >Employer</Link>
 
             </div>
           </div>
@@ -35,12 +36,14 @@ function Navbar( {isSignedIn, isNotSignedIn}) {
           <div className="ml-4 flex items-center md:ml-6">
             <Buttons 
             children= "Sign in"
+            to= "/Signin"
             />
 
             <div className="relative ml-3">
               <div>
               <Buttons
               children= "Sign Out"
+              to= "/Signup"
               />
               </div>
             </div>
@@ -52,15 +55,16 @@ function Navbar( {isSignedIn, isNotSignedIn}) {
           <div className="flex items-center space-x-4">
             <img className="w-10 h-10 rounded-full" src="../img/me2.PNG" alt=""/ >
             <div className="font-medium text-black">
-             <div >Hi, Stephanie Wambui</div>
+             <div className="text-[15px] ">Hi, Stephanie Wambui</div>
           
-             <a
+             <Link
                   href="#"
                   type="button"
-                  className=" bg-transparent text-black font-bold hover:bg-slate-600 border-transparent border-b-2 border-b-black"
+                  className="  text-black hover:font-bold font-normal text-[15px] "
+                  to= "/Signin"
                 >
                   Sign out
-                </a>
+                </Link>
             </div>
           </div>
           </div>
@@ -123,55 +127,61 @@ function Navbar( {isSignedIn, isNotSignedIn}) {
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-8 space-x-2 sm:px-3">
-                <a
+                <Link
                 href="#"
                   className="text-black hover:font-bold block ml-2 "
+                  to= "/"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="#"
                   className="text-black hover:font-bold block"
+                  to= "/FindJobs"
                 >
                   Find Jobs
-                </a>
+                </Link>
 
 
-                <a
+                <Link
                   href="#"
                   className="text-black hover:font-bold block"
+                  to= "/AboutUs"
                 >
                   About Us 
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="#"
                   className="text-black hover:font-bold block"
+                  to= "/Employer"
                 >
                   Employer
-                </a>
+                </Link>
 
                 
               {isNotSignedIn &&(
                 <div>
-                <a
+                <Link
                   href="#"
                   type="button"
                   className="rounded-md bg-black text-white px-2 py-1 hover:bg-slate-600"
+                  to= "/Signin"
                   
                 >
                   Sign in
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="#"
                   type="button"
                   className="rounded-md bg-black text-white px-2 py-1 hover:bg-slate-600"
+                  to= "/Signin"
                   
                 >
                   Sign out
-                </a>
+                </Link>
                 </div>
 
                 )}
@@ -182,13 +192,14 @@ function Navbar( {isSignedIn, isNotSignedIn}) {
             <img className="w-10 h-10 rounded-full" src="../img/me2.PNG" alt=""/ >
             <div className="font-medium text-black">
              <div> Hi, Stephanie Wambui</div>
-             <a
+             <Link
                   href="#"
                   type="button"
                   className=" bg-transparent text-black font-bold hover:bg-slate-600 border-transparent border-b-2 border-b-black"
+                  to= "/Signin"
                 >
                   Sign out
-                </a>
+                </Link>
             </div>
           </div>
                 
